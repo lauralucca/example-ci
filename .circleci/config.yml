@@ -61,7 +61,7 @@ jobs:
 
 workflows:
   version: 2.1
-  momento-tech:
+  momento_tech:
     jobs:
       - build
       - heroku/deploy-via-git:
