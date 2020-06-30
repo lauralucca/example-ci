@@ -5,6 +5,7 @@
 version: 2.1
 orbs:
   slack: circleci/slack@3.4.2
+  heroku: circleci/heroku@1.0.1
 
 jobs:
   build:
@@ -57,3 +58,15 @@ jobs:
           only_for_branches: 'master'
           webhook: '${SLACK_WEBHOOK}'
           channel: 'C016M29AV7B'
+
+workflows:
+  version: 2.1
+  momento-tech:
+    jobs:
+      - build
+      - heroku/deploy-via-git:
+          requires:
+            -build
+          filters:
+            branches:
+              only: master
