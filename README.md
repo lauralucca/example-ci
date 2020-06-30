@@ -45,3 +45,17 @@ jobs:
       branches:
         only: master
 ```
+
+```
+workflows:
+    version: 2.1
+    workflow:
+        jobs:
+            - build
+            - heroku/deploy-via-git:
+                requires:
+                    - build
+                filters:
+                    branches:
+                        only: master
+```

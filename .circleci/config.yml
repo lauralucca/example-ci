@@ -57,3 +57,16 @@ jobs:
 
 orbs:
   slack: circleci/slack@3.4.2
+  heroku: circleci/heroku@1.0.1
+
+workflows:
+  version: 2.1
+  workflow:
+    jobs:
+      - build
+      - heroku/deploy-via-git:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
