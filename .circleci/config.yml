@@ -50,9 +50,9 @@ jobs:
           path: build/test-results/test
           when: always
 
-  - slack/status:
-      fail_only: true
-      mentions: 'U01485RM66P,U014CSLUYF5'
-      only_for_branches: 'master'
-      webhook:	'${SLACK_WEBHOOK}'
-      channel: 'C016M29AV7B'
+      - slack/status:
+          fail_only: true
+          mentions: 'U01485RM66P,U014CSLUYF5'
+          only_for_branches: 'master'
+          webhook:	'${SLACK_WEBHOOK}'
+          channel: 'C016M29AV7B'
