@@ -5,6 +5,7 @@
 version: 2.1
 orbs:
   slack: circleci/slack@3.4.2
+
 jobs:
   build:
     docker:
@@ -54,5 +55,5 @@ jobs:
           fail_only: true
           mentions: 'U01485RM66P,U014CSLUYF5'
           only_for_branches: 'master'
-          webhook:	'${SLACK_WEBHOOK}'
+          webhook: '${SLACK_WEBHOOK}'
           channel: 'C016M29AV7B'
