@@ -18,6 +18,7 @@
   - slack/status:
     fail_only: true
     mentions: 'U014CSLUYF5,U01485RM66P'
+    only_for_branches: 'master'
     webhook: '${SLACK_WEBHOOK}'
     channel: 'C013T77J5HV'
 ```
